@@ -1,0 +1,35 @@
+{
+  "run_id": "extract_8_20261106T062925999637Z",
+  "python": "3.11.6 | packaged by conda-forge | (main, Oct  3 2023, 10:40:35) [GCC 12.3.0]",
+  "executable": "/home/yg/miniconda3/envs/nd3/bin/python",
+  "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.35",
+  "packages": {
+    "numpy": "1.26.4",
+    "scipy": "1.11.4",
+    "torch": "2.5.1",
+    "PyYAML": "6.0.3",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.7.3",
+    "pytest": "9.1.1"
+  },
+  "cuda_available": false,
+  "cuda_version": "12.4",
+  "command": [
+    "/home/yg/miniconda3/envs/nd3/bin/python",
+    "/home/yg/TRANSTSR/src/export_attention.py",
+    "--config",
+    "configs/smoke.yaml",
+    "--data",
+    "data/smoke",
+    "--checkpoint",
+    "runs/smoke_seed42_final/best.pt",
+    "--out",
+    "attention_outputs/extract_8",
+    "--device",
+    "cpu",
+    "--split",
+    "test",
+    "--max-samples",
+    "8"
+  ]
+}

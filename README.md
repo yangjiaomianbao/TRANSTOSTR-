@@ -33,7 +33,7 @@ cd /home/yg/TRANSTSR
 
 ## 从数据生成到主模型训练
 
-Python 3.10+，依赖见 requirements.txt。数据、checkpoint和输出目录默认不提交Git；全新克隆可运行：
+Python 3.10+，依赖见 requirements.txt。本次提交包含当前数据、checkpoint及8条轨迹的导出结果，新增的其他实验目录默认被Git忽略。缺少本地数据或需要重新训练时可运行：
 
 ```bash
 python -m src.data.generate --config configs/smoke.yaml --out data/smoke

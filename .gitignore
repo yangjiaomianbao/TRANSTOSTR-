@@ -1,8 +1,11 @@
 __pycache__/
 .pytest_cache/
 *.pyc
-/data/
+/data/*
+!/data/smoke/
 /runs/
-/attention_outputs/
-/checkpoints/
+/attention_outputs/*
+!/attention_outputs/extract_8/
+/checkpoints/*
+!/checkpoints/attention_seed42/
 .venv/

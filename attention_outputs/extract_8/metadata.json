@@ -1,0 +1,236 @@
+{
+  "run_id": "extract_8_20261106T062925999637Z",
+  "training_run_id": "smoke_seed42_final_20261105T144426057520Z",
+  "checkpoint": "/home/yg/TRANSTSR/checkpoints/attention_seed42/best.pt",
+  "checkpoint_sha256": "a40cf8e23a062f8dbd7213288e8565f97679cc1e793ba0959938556c2fc6fa85",
+  "checkpoint_epoch": 3,
+  "model_seed": 42,
+  "data": "/home/yg/TRANSTSR/data/smoke",
+  "data_run_id": "smoke_20261105T143228550286Z",
+  "manifest_sha256": "d9c951bd86ca3fa1200bdb226eb031aa295a8828b443c9977988171592d19995",
+  "split": "test",
+  "selection": "manifest trajectory order, first max_samples or all; plots use sample 0",
+  "config": {
+    "name": "smoke",
+    "data": {
+      "seed": 42,
+      "n_nodes": 30,
+      "families": {
+        "train": 12,
+        "val": 4,
+        "test": 4
+      },
+      "trajectories": 2,
+      "expected_pairs": 60,
+      "expected_triads": 20,
+      "k2": 0.8,
+      "k3": 0.4,
+      "dt": 0.05,
+      "observed": 96,
+      "future": 32,
+      "rtol": 1e-08,
+      "atol": 1e-10
+    },
+    "model": {
+      "d_model": 64,
+      "n_heads": 4,
+      "n_layers": 2,
+      "d_ff": 128,
+      "dropout": 0.1,
+      "kernel_size": 3,
+      "dilations": [
+        1,
+        2,
+        4,
+        8
+      ]
+    },
+    "training": {
+      "seed": 42,
+      "batch_size": 32,
+      "epochs": 3,
+      "patience": 15,
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "grad_clip": 1.0,
+      "num_threads": 4
+    },
+    "evaluation": {
+      "bootstrap_samples": 1000,
+      "example_count": 3
+    }
+  },
+  "checkpoint_training_config": {
+    "name": "smoke",
+    "data": {
+      "seed": 42,
+      "n_nodes": 30,
+      "families": {
+        "train": 12,
+        "val": 4,
+        "test": 4
+      },
+      "trajectories": 2,
+      "expected_pairs": 60,
+      "expected_triads": 20,
+      "k2": 0.8,
+      "k3": 0.4,
+      "dt": 0.05,
+      "observed": 96,
+      "future": 32,
+      "rtol": 1e-08,
+      "atol": 1e-10
+    },
+    "model": {
+      "d_model": 64,
+      "n_heads": 4,
+      "n_layers": 2,
+      "d_ff": 128,
+      "dropout": 0.1,
+      "kernel_size": 3,
+      "dilations": [
+        1,
+        2,
+        4,
+        8
+      ]
+    },
+    "training": {
+      "seed": 42,
+      "batch_size": 32,
+      "epochs": 3,
+      "patience": 15,
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "grad_clip": 1.0,
+      "num_threads": 4
+    },
+    "evaluation": {
+      "bootstrap_samples": 1000,
+      "example_count": 3
+    },
+    "run_id": "smoke_seed42_final_20261105T144426057520Z",
+    "device": "cpu"
+  },
+  "source_data_sha256": {
+    "f0016_pair_only.npz": "0b209bde1f13992cc8a5a755df5642180624f4bf8a6bb3c161b4dfe60a153247",
+    "f0016_mixed_a.npz": "ce1f81784087630b120aba0f907d94e321379551d2d36d7a72e8b1dec73fea31",
+    "f0016_mixed_b.npz": "4d71f267353b736d846c847cb0e8a3761150811903b24faeba1f79c6760f23ce",
+    "f0017_pair_only.npz": "06fe7f25c39011e0007bc7ec04f742139f4f78446f9f5ad2287d59ecf35c3546"
+  },
+  "samples": [
+    {
+      "trajectory_id": "f0016_pair_only_t000",
+      "topology_id": "f0016_pair_only",
+      "file": "f0016_pair_only.npz",
+      "index": 0
+    },
+    {
+      "trajectory_id": "f0016_pair_only_t001",
+      "topology_id": "f0016_pair_only",
+      "file": "f0016_pair_only.npz",
+      "index": 1
+    },
+    {
+      "trajectory_id": "f0016_mixed_a_t000",
+      "topology_id": "f0016_mixed_a",
+      "file": "f0016_mixed_a.npz",
+      "index": 0
+    },
+    {
+      "trajectory_id": "f0016_mixed_a_t001",
+      "topology_id": "f0016_mixed_a",
+      "file": "f0016_mixed_a.npz",
+      "index": 1
+    },
+    {
+      "trajectory_id": "f0016_mixed_b_t000",
+      "topology_id": "f0016_mixed_b",
+      "file": "f0016_mixed_b.npz",
+      "index": 0
+    },
+    {
+      "trajectory_id": "f0016_mixed_b_t001",
+      "topology_id": "f0016_mixed_b",
+      "file": "f0016_mixed_b.npz",
+      "index": 1
+    },
+    {
+      "trajectory_id": "f0017_pair_only_t000",
+      "topology_id": "f0017_pair_only",
+      "file": "f0017_pair_only.npz",
+      "index": 0
+    },
+    {
+      "trajectory_id": "f0017_pair_only_t001",
+      "topology_id": "f0017_pair_only",
+      "file": "f0017_pair_only.npz",
+      "index": 1
+    }
+  ],
+  "interpretation": "Node-relation features only; neither physical edge probabilities nor reconstructed structure",
+  "new_training_during_export": false,
+  "mode": "eval + inference_mode",
+  "batch_size": 8,
+  "shapes": {
+    "x_obs": [
+      8,
+      30,
+      96,
+      2
+    ],
+    "temporal_features": [
+      8,
+      30,
+      96,
+      64
+    ],
+    "node_tokens": [
+      8,
+      30,
+      64
+    ],
+    "context_tokens": [
+      8,
+      30,
+      64
+    ],
+    "attention_logits": [
+      8,
+      2,
+      4,
+      30,
+      30
+    ],
+    "attention_weights": [
+      8,
+      2,
+      4,
+      30,
+      30
+    ],
+    "symmetric_logits": [
+      8,
+      2,
+      4,
+      30,
+      30
+    ],
+    "symmetric_attention": [
+      8,
+      2,
+      4,
+      30,
+      30
+    ]
+  },
+  "source_code_sha256": {
+    "src/export_attention.py": "62238232d35105da549a325d286cf55201f4ec1c550b235004ae2dc3edfdf97c",
+    "src/model/tcn.py": "40fd97127340934d66f9732f38705503919f1d6ab70b5994138e97465685e1c5",
+    "src/model/spatial_attention.py": "71d6947ebbb10f15b53e05108f74746d4b72ae384f57c7faa9ab5fd9005a74c4",
+    "src/model/attention_probe.py": "54fc69086c1f3829022744dc06b9433329c44b0214c76c53b7908f10c057fdd4",
+    "src/utils.py": "319b78f073aac10ee0b135c10df83e6a0584404008cc8f1743909215a93f8f20"
+  },
+  "checkpoint_original_path": "/home/yg/TRANSTSR/runs/smoke_seed42_final/best.pt",
+  "cleanup_note": "Checkpoint relocated without changing file content. Source hashes and original execution environment describe extraction before repository cleanup; scientific arrays and figures are unchanged."
+}

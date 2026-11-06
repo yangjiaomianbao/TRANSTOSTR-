@@ -1,0 +1,2488 @@
+{
+  "run_id": "smoke_20261105T143228550286Z",
+  "config": {
+    "name": "smoke",
+    "data": {
+      "seed": 42,
+      "n_nodes": 30,
+      "families": {
+        "train": 12,
+        "val": 4,
+        "test": 4
+      },
+      "trajectories": 2,
+      "expected_pairs": 60,
+      "expected_triads": 20,
+      "k2": 0.8,
+      "k3": 0.4,
+      "dt": 0.05,
+      "observed": 96,
+      "future": 32,
+      "rtol": 1e-08,
+      "atol": 1e-10
+    },
+    "model": {
+      "d_model": 64,
+      "n_heads": 4,
+      "n_layers": 2,
+      "d_ff": 128,
+      "dropout": 0.1,
+      "kernel_size": 3,
+      "dilations": [
+        1,
+        2,
+        4,
+        8
+      ]
+    },
+    "training": {
+      "seed": 42,
+      "batch_size": 32,
+      "epochs": 3,
+      "patience": 15,
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "grad_clip": 1.0,
+      "num_threads": 4
+    },
+    "evaluation": {
+      "bootstrap_samples": 1000,
+      "example_count": 3
+    }
+  },
+  "probabilities": {
+    "p2": 0.13793103448275862,
+    "p3": 0.0049261083743842365
+  },
+  "generator": "independent Bernoulli; degree-normalized RK45",
+  "config_hash": "d846bce93864559600ef9be881a7bf13821feaa5f362eb0bda2f107fc890c44b",
+  "environment": {
+    "python": "3.11.6 | packaged by conda-forge | (main, Oct  3 2023, 10:40:35) [GCC 12.3.0]",
+    "executable": "/home/yg/miniconda3/envs/nd3/bin/python",
+    "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.35",
+    "packages": {
+      "numpy": "1.26.4",
+      "scipy": "1.11.4",
+      "torch": "2.5.1",
+      "PyYAML": "6.0.3",
+      "scikit-learn": "1.8.0",
+      "matplotlib": "3.7.3",
+      "pytest": "9.1.1"
+    },
+    "cuda_available": false,
+    "cuda_version": "12.4",
+    "command": [
+      "/home/yg/miniconda3/envs/nd3/bin/python",
+      "/home/yg/TRANSTSR/src/data/generate.py",
+      "--config",
+      "configs/smoke.yaml",
+      "--out",
+      "data/smoke"
+    ]
+  },
+  "topologies": [
+    {
+      "file": "f0000_pair_only.npz",
+      "split": "train",
+      "family_id": 0,
+      "variant": "pair_only",
+      "topology_id": "f0000_pair_only",
+      "n_pairs": 67,
+      "n_triads": 0,
+      "sha256": "7ad4c5b0dacb67851426571d64a19a519a14544f47b7d731e25454cbe6ae4e4f"
+    },
+    {
+      "file": "f0000_mixed_a.npz",
+      "split": "train",
+      "family_id": 0,
+      "variant": "mixed_a",
+      "topology_id": "f0000_mixed_a",
+      "n_pairs": 67,
+      "n_triads": 25,
+      "sha256": "39ea4463e2b7a692a20b3339ca1c7e21cdcab462bb3001884bacec9c56d8ede7"
+    },
+    {
+      "file": "f0000_mixed_b.npz",
+      "split": "train",
+      "family_id": 0,
+      "variant": "mixed_b",
+      "topology_id": "f0000_mixed_b",
+      "n_pairs": 67,
+      "n_triads": 23,
+      "sha256": "5336deb92c18c7a14d2f8fff7decd273796a50b4d9cd9f7e771b0b34f3cad99f"
+    },
+    {
+      "file": "f0001_pair_only.npz",
+      "split": "train",
+      "family_id": 1,
+      "variant": "pair_only",
+      "topology_id": "f0001_pair_only",
+      "n_pairs": 61,
+      "n_triads": 0,
+      "sha256": "6121adba2e239bf8f1b4babf805b46fe61162d230e62607e06f92aa16a70fd51"
+    },
+    {
+      "file": "f0001_mixed_a.npz",
+      "split": "train",
+      "family_id": 1,
+      "variant": "mixed_a",
+      "topology_id": "f0001_mixed_a",
+      "n_pairs": 61,
+      "n_triads": 28,
+      "sha256": "b19f785ff7e58bd6d59a79d29dca6dbcde83f1a2140f54d46cef6edaa0d8f2d4"
+    },
+    {
+      "file": "f0001_mixed_b.npz",
+      "split": "train",
+      "family_id": 1,
+      "variant": "mixed_b",
+      "topology_id": "f0001_mixed_b",
+      "n_pairs": 61,
+      "n_triads": 27,
+      "sha256": "6388240151a0a48b94e5ceaa0c65b5b2c578f934bdb2069422138ded5be02b03"
+    },
+    {
+      "file": "f0002_pair_only.npz",
+      "split": "train",
+      "family_id": 2,
+      "variant": "pair_only",
+      "topology_id": "f0002_pair_only",
+      "n_pairs": 65,
+      "n_triads": 0,
+      "sha256": "cef9fab45ea3c4dd2e97f6c90b1c61413453a5101036bced586afbac44d62da1"
+    },
+    {
+      "file": "f0002_mixed_a.npz",
+      "split": "train",
+      "family_id": 2,
+      "variant": "mixed_a",
+      "topology_id": "f0002_mixed_a",
+      "n_pairs": 65,
+      "n_triads": 27,
+      "sha256": "5672e9fb58f06276e06bf9002f6ed32b972d3bf2e39c71436eed8bcdb22f1464"
+    },
+    {
+      "file": "f0002_mixed_b.npz",
+      "split": "train",
+      "family_id": 2,
+      "variant": "mixed_b",
+      "topology_id": "f0002_mixed_b",
+      "n_pairs": 65,
+      "n_triads": 20,
+      "sha256": "fe1be9de0f915d1d3ced260f4379ae50ccfb2ef7de0248e92b65ceed557cc7e9"
+    },
+    {
+      "file": "f0003_pair_only.npz",
+      "split": "train",
+      "family_id": 3,
+      "variant": "pair_only",
+      "topology_id": "f0003_pair_only",
+      "n_pairs": 61,
+      "n_triads": 0,
+      "sha256": "9eeeb5524fb23786b4032a5acfe11e20db24f9fa4258407471959e2893bbea62"
+    },
+    {
+      "file": "f0003_mixed_a.npz",
+      "split": "train",
+      "family_id": 3,
+      "variant": "mixed_a",
+      "topology_id": "f0003_mixed_a",
+      "n_pairs": 61,
+      "n_triads": 23,
+      "sha256": "913cbf5dd4ff290fd2a13e4a0d807a6188c6053f05da5722dd983d1f7043f3d1"
+    },
+    {
+      "file": "f0003_mixed_b.npz",
+      "split": "train",
+      "family_id": 3,
+      "variant": "mixed_b",
+      "topology_id": "f0003_mixed_b",
+      "n_pairs": 61,
+      "n_triads": 17,
+      "sha256": "012213114f7e845bb48b45eb9ea35544f12f04d657737c944a31153fae00e343"
+    },
+    {
+      "file": "f0004_pair_only.npz",
+      "split": "train",
+      "family_id": 4,
+      "variant": "pair_only",
+      "topology_id": "f0004_pair_only",
+      "n_pairs": 63,
+      "n_triads": 0,
+      "sha256": "d6895561882dfd641f0ff165851a1f3d046cd0d358c3182ade277ff5700f89a0"
+    },
+    {
+      "file": "f0004_mixed_a.npz",
+      "split": "train",
+      "family_id": 4,
+      "variant": "mixed_a",
+      "topology_id": "f0004_mixed_a",
+      "n_pairs": 63,
+      "n_triads": 19,
+      "sha256": "6b0c6c82fdb046c780e168bd00a19642593bab1e21f6ca2bb489d0c4c105629e"
+    },
+    {
+      "file": "f0004_mixed_b.npz",
+      "split": "train",
+      "family_id": 4,
+      "variant": "mixed_b",
+      "topology_id": "f0004_mixed_b",
+      "n_pairs": 63,
+      "n_triads": 18,
+      "sha256": "5d40b346f31c7f1374390701fabd46ed0ac1bbe5c25f3a6db1efc62268ed4a92"
+    },
+    {
+      "file": "f0005_pair_only.npz",
+      "split": "train",
+      "family_id": 5,
+      "variant": "pair_only",
+      "topology_id": "f0005_pair_only",
+      "n_pairs": 74,
+      "n_triads": 0,
+      "sha256": "451ceb73f3ed10a87b1465885f12f837356e4e3ebce2152f521bea455b65f9c9"
+    },
+    {
+      "file": "f0005_mixed_a.npz",
+      "split": "train",
+      "family_id": 5,
+      "variant": "mixed_a",
+      "topology_id": "f0005_mixed_a",
+      "n_pairs": 74,
+      "n_triads": 15,
+      "sha256": "8309587108867b2d13560edd597efae463c63998fb9767258f407b52b2b4ddf8"
+    },
+    {
+      "file": "f0005_mixed_b.npz",
+      "split": "train",
+      "family_id": 5,
+      "variant": "mixed_b",
+      "topology_id": "f0005_mixed_b",
+      "n_pairs": 74,
+      "n_triads": 20,
+      "sha256": "9479c61f59e40ec9d5d5006c9f8b07a44b0d2ca669688201400b6c0c92b0a410"
+    },
+    {
+      "file": "f0006_pair_only.npz",
+      "split": "train",
+      "family_id": 6,
+      "variant": "pair_only",
+      "topology_id": "f0006_pair_only",
+      "n_pairs": 54,
+      "n_triads": 0,
+      "sha256": "66d86f1e5316e0d5b8de3c7bba8ef880ca34b6578cb833fd8f884f42bbdca868"
+    },
+    {
+      "file": "f0006_mixed_a.npz",
+      "split": "train",
+      "family_id": 6,
+      "variant": "mixed_a",
+      "topology_id": "f0006_mixed_a",
+      "n_pairs": 54,
+      "n_triads": 11,
+      "sha256": "318ea7c0d9dee87c1edd8208b25fbc518760396bdd40fe351d8a35125afd6a07"
+    },
+    {
+      "file": "f0006_mixed_b.npz",
+      "split": "train",
+      "family_id": 6,
+      "variant": "mixed_b",
+      "topology_id": "f0006_mixed_b",
+      "n_pairs": 54,
+      "n_triads": 27,
+      "sha256": "f112c9759147220a2ff34394984995799c4ac0a6a9270cd55e694a41ca7f6d0e"
+    },
+    {
+      "file": "f0007_pair_only.npz",
+      "split": "train",
+      "family_id": 7,
+      "variant": "pair_only",
+      "topology_id": "f0007_pair_only",
+      "n_pairs": 66,
+      "n_triads": 0,
+      "sha256": "93c22cc8399f450be14992e8acf22cf2d5beffec4a113ac74995359952418aba"
+    },
+    {
+      "file": "f0007_mixed_a.npz",
+      "split": "train",
+      "family_id": 7,
+      "variant": "mixed_a",
+      "topology_id": "f0007_mixed_a",
+      "n_pairs": 66,
+      "n_triads": 18,
+      "sha256": "bedd09eb893ac6fe2fca6e35018c9800189416868b3ed7077becf5f8b2833b18"
+    },
+    {
+      "file": "f0007_mixed_b.npz",
+      "split": "train",
+      "family_id": 7,
+      "variant": "mixed_b",
+      "topology_id": "f0007_mixed_b",
+      "n_pairs": 66,
+      "n_triads": 22,
+      "sha256": "966a823a64eb459af8b847ddb005a66982e47be26024ea8dd54541c9dbececeb"
+    },
+    {
+      "file": "f0008_pair_only.npz",
+      "split": "train",
+      "family_id": 8,
+      "variant": "pair_only",
+      "topology_id": "f0008_pair_only",
+      "n_pairs": 54,
+      "n_triads": 0,
+      "sha256": "52d3db75133f8700a3591124187eb97c2929c5ac4ecef68d58fcd4ff3b542764"
+    },
+    {
+      "file": "f0008_mixed_a.npz",
+      "split": "train",
+      "family_id": 8,
+      "variant": "mixed_a",
+      "topology_id": "f0008_mixed_a",
+      "n_pairs": 54,
+      "n_triads": 16,
+      "sha256": "d08abef90cf2aa213f1e570510328a9b012428370767752c728236e78b4300d7"
+    },
+    {
+      "file": "f0008_mixed_b.npz",
+      "split": "train",
+      "family_id": 8,
+      "variant": "mixed_b",
+      "topology_id": "f0008_mixed_b",
+      "n_pairs": 54,
+      "n_triads": 20,
+      "sha256": "82535a0eb4f49f2b02dc8a23dcfd4a422c72910024551aa0066336208b30d1ca"
+    },
+    {
+      "file": "f0009_pair_only.npz",
+      "split": "train",
+      "family_id": 9,
+      "variant": "pair_only",
+      "topology_id": "f0009_pair_only",
+      "n_pairs": 54,
+      "n_triads": 0,
+      "sha256": "1418ccf3d684c738b2f58c867a4528d83ebacdd5a6190068f42a6b3913f173d1"
+    },
+    {
+      "file": "f0009_mixed_a.npz",
+      "split": "train",
+      "family_id": 9,
+      "variant": "mixed_a",
+      "topology_id": "f0009_mixed_a",
+      "n_pairs": 54,
+      "n_triads": 18,
+      "sha256": "8d5e3af9144d4ce3d4bf0b3df1f914aa04801a99d51b08c7ea123ad35d6826c5"
+    },
+    {
+      "file": "f0009_mixed_b.npz",
+      "split": "train",
+      "family_id": 9,
+      "variant": "mixed_b",
+      "topology_id": "f0009_mixed_b",
+      "n_pairs": 54,
+      "n_triads": 19,
+      "sha256": "6a790b124917e66f906da4f1902497d35a7ba2d6e6a32d23ee037471f1b0440f"
+    },
+    {
+      "file": "f0010_pair_only.npz",
+      "split": "train",
+      "family_id": 10,
+      "variant": "pair_only",
+      "topology_id": "f0010_pair_only",
+      "n_pairs": 51,
+      "n_triads": 0,
+      "sha256": "315fd81c8f92d397bbcf6cf0bb045cbf50646bd8493542f453162b8a63811132"
+    },
+    {
+      "file": "f0010_mixed_a.npz",
+      "split": "train",
+      "family_id": 10,
+      "variant": "mixed_a",
+      "topology_id": "f0010_mixed_a",
+      "n_pairs": 51,
+      "n_triads": 21,
+      "sha256": "6d225f584754ce9444d5f29ba9e03a8762d11b676d523d678199f15a40399142"
+    },
+    {
+      "file": "f0010_mixed_b.npz",
+      "split": "train",
+      "family_id": 10,
+      "variant": "mixed_b",
+      "topology_id": "f0010_mixed_b",
+      "n_pairs": 51,
+      "n_triads": 22,
+      "sha256": "c605fbbcff81a04220cadd229bfcaee4c944fc6179852f4d6c87e181e5d5c9f2"
+    },
+    {
+      "file": "f0011_pair_only.npz",
+      "split": "train",
+      "family_id": 11,
+      "variant": "pair_only",
+      "topology_id": "f0011_pair_only",
+      "n_pairs": 62,
+      "n_triads": 0,
+      "sha256": "a89122f0d622449e8d9b4f8dfcb7707a01f7987014e290d50c54b558b9b8f69f"
+    },
+    {
+      "file": "f0011_mixed_a.npz",
+      "split": "train",
+      "family_id": 11,
+      "variant": "mixed_a",
+      "topology_id": "f0011_mixed_a",
+      "n_pairs": 62,
+      "n_triads": 24,
+      "sha256": "ef7b0283138ba2829303e400ea3283521bc34157153718e084c6d40d72ee6c63"
+    },
+    {
+      "file": "f0011_mixed_b.npz",
+      "split": "train",
+      "family_id": 11,
+      "variant": "mixed_b",
+      "topology_id": "f0011_mixed_b",
+      "n_pairs": 62,
+      "n_triads": 18,
+      "sha256": "b27cc8bf0d216113d35e09304c346ee52c99609d34cb58882eebba3eed142fb5"
+    },
+    {
+      "file": "f0012_pair_only.npz",
+      "split": "val",
+      "family_id": 12,
+      "variant": "pair_only",
+      "topology_id": "f0012_pair_only",
+      "n_pairs": 50,
+      "n_triads": 0,
+      "sha256": "1614baecf5e0595aa9fe1d879284e10e746d7a36147e0a5f9a794778481d46ca"
+    },
+    {
+      "file": "f0012_mixed_a.npz",
+      "split": "val",
+      "family_id": 12,
+      "variant": "mixed_a",
+      "topology_id": "f0012_mixed_a",
+      "n_pairs": 50,
+      "n_triads": 23,
+      "sha256": "6aaa561c14ad3b4de305e29de392a4c080e009454623a9c8a5079e7499278881"
+    },
+    {
+      "file": "f0012_mixed_b.npz",
+      "split": "val",
+      "family_id": 12,
+      "variant": "mixed_b",
+      "topology_id": "f0012_mixed_b",
+      "n_pairs": 50,
+      "n_triads": 19,
+      "sha256": "0d7d9bb08fdf6a80cdd2f9f89312111224246adb96839d88340d5f8c0d15d73c"
+    },
+    {
+      "file": "f0013_pair_only.npz",
+      "split": "val",
+      "family_id": 13,
+      "variant": "pair_only",
+      "topology_id": "f0013_pair_only",
+      "n_pairs": 66,
+      "n_triads": 0,
+      "sha256": "4ef09f8133c3c95636fdf55df1ba63efc070c9c29a80725467eee0d78c1961f3"
+    },
+    {
+      "file": "f0013_mixed_a.npz",
+      "split": "val",
+      "family_id": 13,
+      "variant": "mixed_a",
+      "topology_id": "f0013_mixed_a",
+      "n_pairs": 66,
+      "n_triads": 20,
+      "sha256": "c5d37af08ccdf2cb7941f3385946fddf7d8f2ba92344bb781cd685e600f54b33"
+    },
+    {
+      "file": "f0013_mixed_b.npz",
+      "split": "val",
+      "family_id": 13,
+      "variant": "mixed_b",
+      "topology_id": "f0013_mixed_b",
+      "n_pairs": 66,
+      "n_triads": 17,
+      "sha256": "d27d00891c72fdcf664abc81f05ac94966b1641abcaad84fadbadef49cf028d3"
+    },
+    {
+      "file": "f0014_pair_only.npz",
+      "split": "val",
+      "family_id": 14,
+      "variant": "pair_only",
+      "topology_id": "f0014_pair_only",
+      "n_pairs": 68,
+      "n_triads": 0,
+      "sha256": "e1ed481b637087c498f8cec06705e053e64b396a3829d674d67464d3bf786647"
+    },
+    {
+      "file": "f0014_mixed_a.npz",
+      "split": "val",
+      "family_id": 14,
+      "variant": "mixed_a",
+      "topology_id": "f0014_mixed_a",
+      "n_pairs": 68,
+      "n_triads": 19,
+      "sha256": "d188c604d4fcec1f2f464d6689f128e6b80182c15170858b0e4f06cbff8e25ac"
+    },
+    {
+      "file": "f0014_mixed_b.npz",
+      "split": "val",
+      "family_id": 14,
+      "variant": "mixed_b",
+      "topology_id": "f0014_mixed_b",
+      "n_pairs": 68,
+      "n_triads": 18,
+      "sha256": "6ee5c497bbf6291182c57e35a17fce0db11d798ed15685253c8c429a4d83b2e9"
+    },
+    {
+      "file": "f0015_pair_only.npz",
+      "split": "val",
+      "family_id": 15,
+      "variant": "pair_only",
+      "topology_id": "f0015_pair_only",
+      "n_pairs": 68,
+      "n_triads": 0,
+      "sha256": "f9638b7f170930a20b94348e4494d86b79f2ed1007d6e17c402f8667eb2d59ab"
+    },
+    {
+      "file": "f0015_mixed_a.npz",
+      "split": "val",
+      "family_id": 15,
+      "variant": "mixed_a",
+      "topology_id": "f0015_mixed_a",
+      "n_pairs": 68,
+      "n_triads": 16,
+      "sha256": "1e8af6aef7f9716370f1c7148caee20f79189a745cd8a34c7b4212dad03e77c9"
+    },
+    {
+      "file": "f0015_mixed_b.npz",
+      "split": "val",
+      "family_id": 15,
+      "variant": "mixed_b",
+      "topology_id": "f0015_mixed_b",
+      "n_pairs": 68,
+      "n_triads": 20,
+      "sha256": "19f2c011f34b8a0779a699b2175fd8a94357b2faa21f05893d71932075b34edd"
+    },
+    {
+      "file": "f0016_pair_only.npz",
+      "split": "test",
+      "family_id": 16,
+      "variant": "pair_only",
+      "topology_id": "f0016_pair_only",
+      "n_pairs": 57,
+      "n_triads": 0,
+      "sha256": "0b209bde1f13992cc8a5a755df5642180624f4bf8a6bb3c161b4dfe60a153247"
+    },
+    {
+      "file": "f0016_mixed_a.npz",
+      "split": "test",
+      "family_id": 16,
+      "variant": "mixed_a",
+      "topology_id": "f0016_mixed_a",
+      "n_pairs": 57,
+      "n_triads": 19,
+      "sha256": "ce1f81784087630b120aba0f907d94e321379551d2d36d7a72e8b1dec73fea31"
+    },
+    {
+      "file": "f0016_mixed_b.npz",
+      "split": "test",
+      "family_id": 16,
+      "variant": "mixed_b",
+      "topology_id": "f0016_mixed_b",
+      "n_pairs": 57,
+      "n_triads": 26,
+      "sha256": "4d71f267353b736d846c847cb0e8a3761150811903b24faeba1f79c6760f23ce"
+    },
+    {
+      "file": "f0017_pair_only.npz",
+      "split": "test",
+      "family_id": 17,
+      "variant": "pair_only",
+      "topology_id": "f0017_pair_only",
+      "n_pairs": 73,
+      "n_triads": 0,
+      "sha256": "06fe7f25c39011e0007bc7ec04f742139f4f78446f9f5ad2287d59ecf35c3546"
+    },
+    {
+      "file": "f0017_mixed_a.npz",
+      "split": "test",
+      "family_id": 17,
+      "variant": "mixed_a",
+      "topology_id": "f0017_mixed_a",
+      "n_pairs": 73,
+      "n_triads": 22,
+      "sha256": "bc0b8a8f92add90ba1bcc631dc332186bd236cf192e3c0be8fda9fb420192c38"
+    },
+    {
+      "file": "f0017_mixed_b.npz",
+      "split": "test",
+      "family_id": 17,
+      "variant": "mixed_b",
+      "topology_id": "f0017_mixed_b",
+      "n_pairs": 73,
+      "n_triads": 20,
+      "sha256": "ed6e61d302d1f302379dbb5a337b06c3826ced2355c2370aab1629fc3ff3c9d7"
+    },
+    {
+      "file": "f0018_pair_only.npz",
+      "split": "test",
+      "family_id": 18,
+      "variant": "pair_only",
+      "topology_id": "f0018_pair_only",
+      "n_pairs": 58,
+      "n_triads": 0,
+      "sha256": "1971a21f79d290d427c94af0dcd1aa8e2c8f504a2b704b327d066ab5883aa1a6"
+    },
+    {
+      "file": "f0018_mixed_a.npz",
+      "split": "test",
+      "family_id": 18,
+      "variant": "mixed_a",
+      "topology_id": "f0018_mixed_a",
+      "n_pairs": 58,
+      "n_triads": 21,
+      "sha256": "f24efcfe1aec1226bdc80e54c513e339ff159fe7f4ac195620ff9f428ac1bcbb"
+    },
+    {
+      "file": "f0018_mixed_b.npz",
+      "split": "test",
+      "family_id": 18,
+      "variant": "mixed_b",
+      "topology_id": "f0018_mixed_b",
+      "n_pairs": 58,
+      "n_triads": 25,
+      "sha256": "a3f63e1b18e067bf4f6b750190c590086a291dc658b80ab0cd25e7a7350d281b"
+    },
+    {
+      "file": "f0019_pair_only.npz",
+      "split": "test",
+      "family_id": 19,
+      "variant": "pair_only",
+      "topology_id": "f0019_pair_only",
+      "n_pairs": 68,
+      "n_triads": 0,
+      "sha256": "38c5a33e148619273dbbb9170505d74894255568442565360b5c52038d3f2bcf"
+    },
+    {
+      "file": "f0019_mixed_a.npz",
+      "split": "test",
+      "family_id": 19,
+      "variant": "mixed_a",
+      "topology_id": "f0019_mixed_a",
+      "n_pairs": 68,
+      "n_triads": 17,
+      "sha256": "4ecca92fc40d1b664beed466d9fcb0ada9c25cb4292ae04bdfb16e1ec704cfde"
+    },
+    {
+      "file": "f0019_mixed_b.npz",
+      "split": "test",
+      "family_id": 19,
+      "variant": "mixed_b",
+      "topology_id": "f0019_mixed_b",
+      "n_pairs": 68,
+      "n_triads": 21,
+      "sha256": "1a2102d6e472b194951c35b8e2cf70baeb9a773ba362d6c790b5f15c5d91dbe5"
+    }
+  ],
+  "trajectories": [
+    {
+      "file": "f0000_pair_only.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 0,
+      "variant": "pair_only",
+      "topology_id": "f0000_pair_only",
+      "trajectory_id": "f0000_pair_only_t000",
+      "seed": [
+        42,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0000_pair_only.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 0,
+      "variant": "pair_only",
+      "topology_id": "f0000_pair_only",
+      "trajectory_id": "f0000_pair_only_t001",
+      "seed": [
+        42,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0000_mixed_a.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 0,
+      "variant": "mixed_a",
+      "topology_id": "f0000_mixed_a",
+      "trajectory_id": "f0000_mixed_a_t000",
+      "seed": [
+        42,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0000_mixed_a.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 0,
+      "variant": "mixed_a",
+      "topology_id": "f0000_mixed_a",
+      "trajectory_id": "f0000_mixed_a_t001",
+      "seed": [
+        42,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0000_mixed_b.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 0,
+      "variant": "mixed_b",
+      "topology_id": "f0000_mixed_b",
+      "trajectory_id": "f0000_mixed_b_t000",
+      "seed": [
+        42,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0000_mixed_b.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 0,
+      "variant": "mixed_b",
+      "topology_id": "f0000_mixed_b",
+      "trajectory_id": "f0000_mixed_b_t001",
+      "seed": [
+        42,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0001_pair_only.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 1,
+      "variant": "pair_only",
+      "topology_id": "f0001_pair_only",
+      "trajectory_id": "f0001_pair_only_t000",
+      "seed": [
+        42,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0001_pair_only.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 1,
+      "variant": "pair_only",
+      "topology_id": "f0001_pair_only",
+      "trajectory_id": "f0001_pair_only_t001",
+      "seed": [
+        42,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0001_mixed_a.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 1,
+      "variant": "mixed_a",
+      "topology_id": "f0001_mixed_a",
+      "trajectory_id": "f0001_mixed_a_t000",
+      "seed": [
+        42,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0001_mixed_a.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 1,
+      "variant": "mixed_a",
+      "topology_id": "f0001_mixed_a",
+      "trajectory_id": "f0001_mixed_a_t001",
+      "seed": [
+        42,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0001_mixed_b.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 1,
+      "variant": "mixed_b",
+      "topology_id": "f0001_mixed_b",
+      "trajectory_id": "f0001_mixed_b_t000",
+      "seed": [
+        42,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0001_mixed_b.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 1,
+      "variant": "mixed_b",
+      "topology_id": "f0001_mixed_b",
+      "trajectory_id": "f0001_mixed_b_t001",
+      "seed": [
+        42,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0002_pair_only.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 2,
+      "variant": "pair_only",
+      "topology_id": "f0002_pair_only",
+      "trajectory_id": "f0002_pair_only_t000",
+      "seed": [
+        42,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0002_pair_only.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 2,
+      "variant": "pair_only",
+      "topology_id": "f0002_pair_only",
+      "trajectory_id": "f0002_pair_only_t001",
+      "seed": [
+        42,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0002_mixed_a.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 2,
+      "variant": "mixed_a",
+      "topology_id": "f0002_mixed_a",
+      "trajectory_id": "f0002_mixed_a_t000",
+      "seed": [
+        42,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0002_mixed_a.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 2,
+      "variant": "mixed_a",
+      "topology_id": "f0002_mixed_a",
+      "trajectory_id": "f0002_mixed_a_t001",
+      "seed": [
+        42,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0002_mixed_b.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 2,
+      "variant": "mixed_b",
+      "topology_id": "f0002_mixed_b",
+      "trajectory_id": "f0002_mixed_b_t000",
+      "seed": [
+        42,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0002_mixed_b.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 2,
+      "variant": "mixed_b",
+      "topology_id": "f0002_mixed_b",
+      "trajectory_id": "f0002_mixed_b_t001",
+      "seed": [
+        42,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0003_pair_only.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 3,
+      "variant": "pair_only",
+      "topology_id": "f0003_pair_only",
+      "trajectory_id": "f0003_pair_only_t000",
+      "seed": [
+        42,
+        3,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0003_pair_only.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 3,
+      "variant": "pair_only",
+      "topology_id": "f0003_pair_only",
+      "trajectory_id": "f0003_pair_only_t001",
+      "seed": [
+        42,
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0003_mixed_a.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 3,
+      "variant": "mixed_a",
+      "topology_id": "f0003_mixed_a",
+      "trajectory_id": "f0003_mixed_a_t000",
+      "seed": [
+        42,
+        3,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0003_mixed_a.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 3,
+      "variant": "mixed_a",
+      "topology_id": "f0003_mixed_a",
+      "trajectory_id": "f0003_mixed_a_t001",
+      "seed": [
+        42,
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0003_mixed_b.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 3,
+      "variant": "mixed_b",
+      "topology_id": "f0003_mixed_b",
+      "trajectory_id": "f0003_mixed_b_t000",
+      "seed": [
+        42,
+        3,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0003_mixed_b.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 3,
+      "variant": "mixed_b",
+      "topology_id": "f0003_mixed_b",
+      "trajectory_id": "f0003_mixed_b_t001",
+      "seed": [
+        42,
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0004_pair_only.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 4,
+      "variant": "pair_only",
+      "topology_id": "f0004_pair_only",
+      "trajectory_id": "f0004_pair_only_t000",
+      "seed": [
+        42,
+        4,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0004_pair_only.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 4,
+      "variant": "pair_only",
+      "topology_id": "f0004_pair_only",
+      "trajectory_id": "f0004_pair_only_t001",
+      "seed": [
+        42,
+        4,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0004_mixed_a.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 4,
+      "variant": "mixed_a",
+      "topology_id": "f0004_mixed_a",
+      "trajectory_id": "f0004_mixed_a_t000",
+      "seed": [
+        42,
+        4,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0004_mixed_a.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 4,
+      "variant": "mixed_a",
+      "topology_id": "f0004_mixed_a",
+      "trajectory_id": "f0004_mixed_a_t001",
+      "seed": [
+        42,
+        4,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0004_mixed_b.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 4,
+      "variant": "mixed_b",
+      "topology_id": "f0004_mixed_b",
+      "trajectory_id": "f0004_mixed_b_t000",
+      "seed": [
+        42,
+        4,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0004_mixed_b.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 4,
+      "variant": "mixed_b",
+      "topology_id": "f0004_mixed_b",
+      "trajectory_id": "f0004_mixed_b_t001",
+      "seed": [
+        42,
+        4,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0005_pair_only.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 5,
+      "variant": "pair_only",
+      "topology_id": "f0005_pair_only",
+      "trajectory_id": "f0005_pair_only_t000",
+      "seed": [
+        42,
+        5,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0005_pair_only.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 5,
+      "variant": "pair_only",
+      "topology_id": "f0005_pair_only",
+      "trajectory_id": "f0005_pair_only_t001",
+      "seed": [
+        42,
+        5,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0005_mixed_a.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 5,
+      "variant": "mixed_a",
+      "topology_id": "f0005_mixed_a",
+      "trajectory_id": "f0005_mixed_a_t000",
+      "seed": [
+        42,
+        5,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0005_mixed_a.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 5,
+      "variant": "mixed_a",
+      "topology_id": "f0005_mixed_a",
+      "trajectory_id": "f0005_mixed_a_t001",
+      "seed": [
+        42,
+        5,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0005_mixed_b.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 5,
+      "variant": "mixed_b",
+      "topology_id": "f0005_mixed_b",
+      "trajectory_id": "f0005_mixed_b_t000",
+      "seed": [
+        42,
+        5,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0005_mixed_b.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 5,
+      "variant": "mixed_b",
+      "topology_id": "f0005_mixed_b",
+      "trajectory_id": "f0005_mixed_b_t001",
+      "seed": [
+        42,
+        5,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0006_pair_only.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 6,
+      "variant": "pair_only",
+      "topology_id": "f0006_pair_only",
+      "trajectory_id": "f0006_pair_only_t000",
+      "seed": [
+        42,
+        6,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0006_pair_only.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 6,
+      "variant": "pair_only",
+      "topology_id": "f0006_pair_only",
+      "trajectory_id": "f0006_pair_only_t001",
+      "seed": [
+        42,
+        6,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0006_mixed_a.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 6,
+      "variant": "mixed_a",
+      "topology_id": "f0006_mixed_a",
+      "trajectory_id": "f0006_mixed_a_t000",
+      "seed": [
+        42,
+        6,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0006_mixed_a.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 6,
+      "variant": "mixed_a",
+      "topology_id": "f0006_mixed_a",
+      "trajectory_id": "f0006_mixed_a_t001",
+      "seed": [
+        42,
+        6,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0006_mixed_b.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 6,
+      "variant": "mixed_b",
+      "topology_id": "f0006_mixed_b",
+      "trajectory_id": "f0006_mixed_b_t000",
+      "seed": [
+        42,
+        6,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0006_mixed_b.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 6,
+      "variant": "mixed_b",
+      "topology_id": "f0006_mixed_b",
+      "trajectory_id": "f0006_mixed_b_t001",
+      "seed": [
+        42,
+        6,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0007_pair_only.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 7,
+      "variant": "pair_only",
+      "topology_id": "f0007_pair_only",
+      "trajectory_id": "f0007_pair_only_t000",
+      "seed": [
+        42,
+        7,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0007_pair_only.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 7,
+      "variant": "pair_only",
+      "topology_id": "f0007_pair_only",
+      "trajectory_id": "f0007_pair_only_t001",
+      "seed": [
+        42,
+        7,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0007_mixed_a.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 7,
+      "variant": "mixed_a",
+      "topology_id": "f0007_mixed_a",
+      "trajectory_id": "f0007_mixed_a_t000",
+      "seed": [
+        42,
+        7,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0007_mixed_a.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 7,
+      "variant": "mixed_a",
+      "topology_id": "f0007_mixed_a",
+      "trajectory_id": "f0007_mixed_a_t001",
+      "seed": [
+        42,
+        7,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0007_mixed_b.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 7,
+      "variant": "mixed_b",
+      "topology_id": "f0007_mixed_b",
+      "trajectory_id": "f0007_mixed_b_t000",
+      "seed": [
+        42,
+        7,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0007_mixed_b.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 7,
+      "variant": "mixed_b",
+      "topology_id": "f0007_mixed_b",
+      "trajectory_id": "f0007_mixed_b_t001",
+      "seed": [
+        42,
+        7,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0008_pair_only.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 8,
+      "variant": "pair_only",
+      "topology_id": "f0008_pair_only",
+      "trajectory_id": "f0008_pair_only_t000",
+      "seed": [
+        42,
+        8,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0008_pair_only.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 8,
+      "variant": "pair_only",
+      "topology_id": "f0008_pair_only",
+      "trajectory_id": "f0008_pair_only_t001",
+      "seed": [
+        42,
+        8,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0008_mixed_a.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 8,
+      "variant": "mixed_a",
+      "topology_id": "f0008_mixed_a",
+      "trajectory_id": "f0008_mixed_a_t000",
+      "seed": [
+        42,
+        8,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0008_mixed_a.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 8,
+      "variant": "mixed_a",
+      "topology_id": "f0008_mixed_a",
+      "trajectory_id": "f0008_mixed_a_t001",
+      "seed": [
+        42,
+        8,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0008_mixed_b.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 8,
+      "variant": "mixed_b",
+      "topology_id": "f0008_mixed_b",
+      "trajectory_id": "f0008_mixed_b_t000",
+      "seed": [
+        42,
+        8,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0008_mixed_b.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 8,
+      "variant": "mixed_b",
+      "topology_id": "f0008_mixed_b",
+      "trajectory_id": "f0008_mixed_b_t001",
+      "seed": [
+        42,
+        8,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0009_pair_only.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 9,
+      "variant": "pair_only",
+      "topology_id": "f0009_pair_only",
+      "trajectory_id": "f0009_pair_only_t000",
+      "seed": [
+        42,
+        9,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0009_pair_only.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 9,
+      "variant": "pair_only",
+      "topology_id": "f0009_pair_only",
+      "trajectory_id": "f0009_pair_only_t001",
+      "seed": [
+        42,
+        9,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0009_mixed_a.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 9,
+      "variant": "mixed_a",
+      "topology_id": "f0009_mixed_a",
+      "trajectory_id": "f0009_mixed_a_t000",
+      "seed": [
+        42,
+        9,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0009_mixed_a.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 9,
+      "variant": "mixed_a",
+      "topology_id": "f0009_mixed_a",
+      "trajectory_id": "f0009_mixed_a_t001",
+      "seed": [
+        42,
+        9,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0009_mixed_b.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 9,
+      "variant": "mixed_b",
+      "topology_id": "f0009_mixed_b",
+      "trajectory_id": "f0009_mixed_b_t000",
+      "seed": [
+        42,
+        9,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0009_mixed_b.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 9,
+      "variant": "mixed_b",
+      "topology_id": "f0009_mixed_b",
+      "trajectory_id": "f0009_mixed_b_t001",
+      "seed": [
+        42,
+        9,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0010_pair_only.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 10,
+      "variant": "pair_only",
+      "topology_id": "f0010_pair_only",
+      "trajectory_id": "f0010_pair_only_t000",
+      "seed": [
+        42,
+        10,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0010_pair_only.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 10,
+      "variant": "pair_only",
+      "topology_id": "f0010_pair_only",
+      "trajectory_id": "f0010_pair_only_t001",
+      "seed": [
+        42,
+        10,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0010_mixed_a.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 10,
+      "variant": "mixed_a",
+      "topology_id": "f0010_mixed_a",
+      "trajectory_id": "f0010_mixed_a_t000",
+      "seed": [
+        42,
+        10,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0010_mixed_a.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 10,
+      "variant": "mixed_a",
+      "topology_id": "f0010_mixed_a",
+      "trajectory_id": "f0010_mixed_a_t001",
+      "seed": [
+        42,
+        10,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0010_mixed_b.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 10,
+      "variant": "mixed_b",
+      "topology_id": "f0010_mixed_b",
+      "trajectory_id": "f0010_mixed_b_t000",
+      "seed": [
+        42,
+        10,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0010_mixed_b.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 10,
+      "variant": "mixed_b",
+      "topology_id": "f0010_mixed_b",
+      "trajectory_id": "f0010_mixed_b_t001",
+      "seed": [
+        42,
+        10,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0011_pair_only.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 11,
+      "variant": "pair_only",
+      "topology_id": "f0011_pair_only",
+      "trajectory_id": "f0011_pair_only_t000",
+      "seed": [
+        42,
+        11,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0011_pair_only.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 11,
+      "variant": "pair_only",
+      "topology_id": "f0011_pair_only",
+      "trajectory_id": "f0011_pair_only_t001",
+      "seed": [
+        42,
+        11,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0011_mixed_a.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 11,
+      "variant": "mixed_a",
+      "topology_id": "f0011_mixed_a",
+      "trajectory_id": "f0011_mixed_a_t000",
+      "seed": [
+        42,
+        11,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0011_mixed_a.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 11,
+      "variant": "mixed_a",
+      "topology_id": "f0011_mixed_a",
+      "trajectory_id": "f0011_mixed_a_t001",
+      "seed": [
+        42,
+        11,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0011_mixed_b.npz",
+      "index": 0,
+      "split": "train",
+      "family_id": 11,
+      "variant": "mixed_b",
+      "topology_id": "f0011_mixed_b",
+      "trajectory_id": "f0011_mixed_b_t000",
+      "seed": [
+        42,
+        11,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0011_mixed_b.npz",
+      "index": 1,
+      "split": "train",
+      "family_id": 11,
+      "variant": "mixed_b",
+      "topology_id": "f0011_mixed_b",
+      "trajectory_id": "f0011_mixed_b_t001",
+      "seed": [
+        42,
+        11,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0012_pair_only.npz",
+      "index": 0,
+      "split": "val",
+      "family_id": 12,
+      "variant": "pair_only",
+      "topology_id": "f0012_pair_only",
+      "trajectory_id": "f0012_pair_only_t000",
+      "seed": [
+        42,
+        12,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0012_pair_only.npz",
+      "index": 1,
+      "split": "val",
+      "family_id": 12,
+      "variant": "pair_only",
+      "topology_id": "f0012_pair_only",
+      "trajectory_id": "f0012_pair_only_t001",
+      "seed": [
+        42,
+        12,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0012_mixed_a.npz",
+      "index": 0,
+      "split": "val",
+      "family_id": 12,
+      "variant": "mixed_a",
+      "topology_id": "f0012_mixed_a",
+      "trajectory_id": "f0012_mixed_a_t000",
+      "seed": [
+        42,
+        12,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0012_mixed_a.npz",
+      "index": 1,
+      "split": "val",
+      "family_id": 12,
+      "variant": "mixed_a",
+      "topology_id": "f0012_mixed_a",
+      "trajectory_id": "f0012_mixed_a_t001",
+      "seed": [
+        42,
+        12,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0012_mixed_b.npz",
+      "index": 0,
+      "split": "val",
+      "family_id": 12,
+      "variant": "mixed_b",
+      "topology_id": "f0012_mixed_b",
+      "trajectory_id": "f0012_mixed_b_t000",
+      "seed": [
+        42,
+        12,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0012_mixed_b.npz",
+      "index": 1,
+      "split": "val",
+      "family_id": 12,
+      "variant": "mixed_b",
+      "topology_id": "f0012_mixed_b",
+      "trajectory_id": "f0012_mixed_b_t001",
+      "seed": [
+        42,
+        12,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0013_pair_only.npz",
+      "index": 0,
+      "split": "val",
+      "family_id": 13,
+      "variant": "pair_only",
+      "topology_id": "f0013_pair_only",
+      "trajectory_id": "f0013_pair_only_t000",
+      "seed": [
+        42,
+        13,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0013_pair_only.npz",
+      "index": 1,
+      "split": "val",
+      "family_id": 13,
+      "variant": "pair_only",
+      "topology_id": "f0013_pair_only",
+      "trajectory_id": "f0013_pair_only_t001",
+      "seed": [
+        42,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0013_mixed_a.npz",
+      "index": 0,
+      "split": "val",
+      "family_id": 13,
+      "variant": "mixed_a",
+      "topology_id": "f0013_mixed_a",
+      "trajectory_id": "f0013_mixed_a_t000",
+      "seed": [
+        42,
+        13,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0013_mixed_a.npz",
+      "index": 1,
+      "split": "val",
+      "family_id": 13,
+      "variant": "mixed_a",
+      "topology_id": "f0013_mixed_a",
+      "trajectory_id": "f0013_mixed_a_t001",
+      "seed": [
+        42,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0013_mixed_b.npz",
+      "index": 0,
+      "split": "val",
+      "family_id": 13,
+      "variant": "mixed_b",
+      "topology_id": "f0013_mixed_b",
+      "trajectory_id": "f0013_mixed_b_t000",
+      "seed": [
+        42,
+        13,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0013_mixed_b.npz",
+      "index": 1,
+      "split": "val",
+      "family_id": 13,
+      "variant": "mixed_b",
+      "topology_id": "f0013_mixed_b",
+      "trajectory_id": "f0013_mixed_b_t001",
+      "seed": [
+        42,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0014_pair_only.npz",
+      "index": 0,
+      "split": "val",
+      "family_id": 14,
+      "variant": "pair_only",
+      "topology_id": "f0014_pair_only",
+      "trajectory_id": "f0014_pair_only_t000",
+      "seed": [
+        42,
+        14,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0014_pair_only.npz",
+      "index": 1,
+      "split": "val",
+      "family_id": 14,
+      "variant": "pair_only",
+      "topology_id": "f0014_pair_only",
+      "trajectory_id": "f0014_pair_only_t001",
+      "seed": [
+        42,
+        14,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0014_mixed_a.npz",
+      "index": 0,
+      "split": "val",
+      "family_id": 14,
+      "variant": "mixed_a",
+      "topology_id": "f0014_mixed_a",
+      "trajectory_id": "f0014_mixed_a_t000",
+      "seed": [
+        42,
+        14,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0014_mixed_a.npz",
+      "index": 1,
+      "split": "val",
+      "family_id": 14,
+      "variant": "mixed_a",
+      "topology_id": "f0014_mixed_a",
+      "trajectory_id": "f0014_mixed_a_t001",
+      "seed": [
+        42,
+        14,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0014_mixed_b.npz",
+      "index": 0,
+      "split": "val",
+      "family_id": 14,
+      "variant": "mixed_b",
+      "topology_id": "f0014_mixed_b",
+      "trajectory_id": "f0014_mixed_b_t000",
+      "seed": [
+        42,
+        14,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0014_mixed_b.npz",
+      "index": 1,
+      "split": "val",
+      "family_id": 14,
+      "variant": "mixed_b",
+      "topology_id": "f0014_mixed_b",
+      "trajectory_id": "f0014_mixed_b_t001",
+      "seed": [
+        42,
+        14,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0015_pair_only.npz",
+      "index": 0,
+      "split": "val",
+      "family_id": 15,
+      "variant": "pair_only",
+      "topology_id": "f0015_pair_only",
+      "trajectory_id": "f0015_pair_only_t000",
+      "seed": [
+        42,
+        15,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0015_pair_only.npz",
+      "index": 1,
+      "split": "val",
+      "family_id": 15,
+      "variant": "pair_only",
+      "topology_id": "f0015_pair_only",
+      "trajectory_id": "f0015_pair_only_t001",
+      "seed": [
+        42,
+        15,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0015_mixed_a.npz",
+      "index": 0,
+      "split": "val",
+      "family_id": 15,
+      "variant": "mixed_a",
+      "topology_id": "f0015_mixed_a",
+      "trajectory_id": "f0015_mixed_a_t000",
+      "seed": [
+        42,
+        15,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0015_mixed_a.npz",
+      "index": 1,
+      "split": "val",
+      "family_id": 15,
+      "variant": "mixed_a",
+      "topology_id": "f0015_mixed_a",
+      "trajectory_id": "f0015_mixed_a_t001",
+      "seed": [
+        42,
+        15,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0015_mixed_b.npz",
+      "index": 0,
+      "split": "val",
+      "family_id": 15,
+      "variant": "mixed_b",
+      "topology_id": "f0015_mixed_b",
+      "trajectory_id": "f0015_mixed_b_t000",
+      "seed": [
+        42,
+        15,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0015_mixed_b.npz",
+      "index": 1,
+      "split": "val",
+      "family_id": 15,
+      "variant": "mixed_b",
+      "topology_id": "f0015_mixed_b",
+      "trajectory_id": "f0015_mixed_b_t001",
+      "seed": [
+        42,
+        15,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0016_pair_only.npz",
+      "index": 0,
+      "split": "test",
+      "family_id": 16,
+      "variant": "pair_only",
+      "topology_id": "f0016_pair_only",
+      "trajectory_id": "f0016_pair_only_t000",
+      "seed": [
+        42,
+        16,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0016_pair_only.npz",
+      "index": 1,
+      "split": "test",
+      "family_id": 16,
+      "variant": "pair_only",
+      "topology_id": "f0016_pair_only",
+      "trajectory_id": "f0016_pair_only_t001",
+      "seed": [
+        42,
+        16,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0016_mixed_a.npz",
+      "index": 0,
+      "split": "test",
+      "family_id": 16,
+      "variant": "mixed_a",
+      "topology_id": "f0016_mixed_a",
+      "trajectory_id": "f0016_mixed_a_t000",
+      "seed": [
+        42,
+        16,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0016_mixed_a.npz",
+      "index": 1,
+      "split": "test",
+      "family_id": 16,
+      "variant": "mixed_a",
+      "topology_id": "f0016_mixed_a",
+      "trajectory_id": "f0016_mixed_a_t001",
+      "seed": [
+        42,
+        16,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0016_mixed_b.npz",
+      "index": 0,
+      "split": "test",
+      "family_id": 16,
+      "variant": "mixed_b",
+      "topology_id": "f0016_mixed_b",
+      "trajectory_id": "f0016_mixed_b_t000",
+      "seed": [
+        42,
+        16,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0016_mixed_b.npz",
+      "index": 1,
+      "split": "test",
+      "family_id": 16,
+      "variant": "mixed_b",
+      "topology_id": "f0016_mixed_b",
+      "trajectory_id": "f0016_mixed_b_t001",
+      "seed": [
+        42,
+        16,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0017_pair_only.npz",
+      "index": 0,
+      "split": "test",
+      "family_id": 17,
+      "variant": "pair_only",
+      "topology_id": "f0017_pair_only",
+      "trajectory_id": "f0017_pair_only_t000",
+      "seed": [
+        42,
+        17,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0017_pair_only.npz",
+      "index": 1,
+      "split": "test",
+      "family_id": 17,
+      "variant": "pair_only",
+      "topology_id": "f0017_pair_only",
+      "trajectory_id": "f0017_pair_only_t001",
+      "seed": [
+        42,
+        17,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0017_mixed_a.npz",
+      "index": 0,
+      "split": "test",
+      "family_id": 17,
+      "variant": "mixed_a",
+      "topology_id": "f0017_mixed_a",
+      "trajectory_id": "f0017_mixed_a_t000",
+      "seed": [
+        42,
+        17,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0017_mixed_a.npz",
+      "index": 1,
+      "split": "test",
+      "family_id": 17,
+      "variant": "mixed_a",
+      "topology_id": "f0017_mixed_a",
+      "trajectory_id": "f0017_mixed_a_t001",
+      "seed": [
+        42,
+        17,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0017_mixed_b.npz",
+      "index": 0,
+      "split": "test",
+      "family_id": 17,
+      "variant": "mixed_b",
+      "topology_id": "f0017_mixed_b",
+      "trajectory_id": "f0017_mixed_b_t000",
+      "seed": [
+        42,
+        17,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0017_mixed_b.npz",
+      "index": 1,
+      "split": "test",
+      "family_id": 17,
+      "variant": "mixed_b",
+      "topology_id": "f0017_mixed_b",
+      "trajectory_id": "f0017_mixed_b_t001",
+      "seed": [
+        42,
+        17,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0018_pair_only.npz",
+      "index": 0,
+      "split": "test",
+      "family_id": 18,
+      "variant": "pair_only",
+      "topology_id": "f0018_pair_only",
+      "trajectory_id": "f0018_pair_only_t000",
+      "seed": [
+        42,
+        18,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0018_pair_only.npz",
+      "index": 1,
+      "split": "test",
+      "family_id": 18,
+      "variant": "pair_only",
+      "topology_id": "f0018_pair_only",
+      "trajectory_id": "f0018_pair_only_t001",
+      "seed": [
+        42,
+        18,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0018_mixed_a.npz",
+      "index": 0,
+      "split": "test",
+      "family_id": 18,
+      "variant": "mixed_a",
+      "topology_id": "f0018_mixed_a",
+      "trajectory_id": "f0018_mixed_a_t000",
+      "seed": [
+        42,
+        18,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0018_mixed_a.npz",
+      "index": 1,
+      "split": "test",
+      "family_id": 18,
+      "variant": "mixed_a",
+      "topology_id": "f0018_mixed_a",
+      "trajectory_id": "f0018_mixed_a_t001",
+      "seed": [
+        42,
+        18,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0018_mixed_b.npz",
+      "index": 0,
+      "split": "test",
+      "family_id": 18,
+      "variant": "mixed_b",
+      "topology_id": "f0018_mixed_b",
+      "trajectory_id": "f0018_mixed_b_t000",
+      "seed": [
+        42,
+        18,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0018_mixed_b.npz",
+      "index": 1,
+      "split": "test",
+      "family_id": 18,
+      "variant": "mixed_b",
+      "topology_id": "f0018_mixed_b",
+      "trajectory_id": "f0018_mixed_b_t001",
+      "seed": [
+        42,
+        18,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0019_pair_only.npz",
+      "index": 0,
+      "split": "test",
+      "family_id": 19,
+      "variant": "pair_only",
+      "topology_id": "f0019_pair_only",
+      "trajectory_id": "f0019_pair_only_t000",
+      "seed": [
+        42,
+        19,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0019_pair_only.npz",
+      "index": 1,
+      "split": "test",
+      "family_id": 19,
+      "variant": "pair_only",
+      "topology_id": "f0019_pair_only",
+      "trajectory_id": "f0019_pair_only_t001",
+      "seed": [
+        42,
+        19,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0019_mixed_a.npz",
+      "index": 0,
+      "split": "test",
+      "family_id": 19,
+      "variant": "mixed_a",
+      "topology_id": "f0019_mixed_a",
+      "trajectory_id": "f0019_mixed_a_t000",
+      "seed": [
+        42,
+        19,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0019_mixed_a.npz",
+      "index": 1,
+      "split": "test",
+      "family_id": 19,
+      "variant": "mixed_a",
+      "topology_id": "f0019_mixed_a",
+      "trajectory_id": "f0019_mixed_a_t001",
+      "seed": [
+        42,
+        19,
+        1,
+        1
+      ]
+    },
+    {
+      "file": "f0019_mixed_b.npz",
+      "index": 0,
+      "split": "test",
+      "family_id": 19,
+      "variant": "mixed_b",
+      "topology_id": "f0019_mixed_b",
+      "trajectory_id": "f0019_mixed_b_t000",
+      "seed": [
+        42,
+        19,
+        1,
+        0
+      ]
+    },
+    {
+      "file": "f0019_mixed_b.npz",
+      "index": 1,
+      "split": "test",
+      "family_id": 19,
+      "variant": "mixed_b",
+      "topology_id": "f0019_mixed_b",
+      "trajectory_id": "f0019_mixed_b_t001",
+      "seed": [
+        42,
+        19,
+        1,
+        1
+      ]
+    }
+  ],
+  "candidate_sha256": "d21d94d37007f0511c279d05457e54e331f3351b46d4126c4c36e2c0f329938c"
+}

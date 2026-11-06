@@ -1,0 +1,65 @@
+{
+  "preserved_export_before_cleanup": {
+    "environment.json": "2077bdd8da2e34e6d331e2b959c0b1f5fbfa79bf98fdd75bdbc77dc2ccb7057c",
+    "attention_features.npz": "c5bd13f6df955b887b1b252ab8d8b666b61eb2bcd47c63bc571c3e8d9f97b352",
+    "symmetric_heads.png": "deeda247453ab2d55d44105d100bfe6187e33ea63fffcea62223f314fbc56422",
+    "README_attention_results.md": "eeb0d808c3c3300d57371a514f9f3cf73d9bf3815d1a1c7b24200413c6c748c5",
+    "training_loss.png": "e0940b9fb69ea18473eca1c664636ed8eac8474ac114fa64278d3a5870f78c6e",
+    "metadata.json": "e72315ae8a63fc28af03dcba21724d37fd912e51e9ea921649de56b7821102a1",
+    "attention_diagnostics.json": "fe96ce18d0b7f8ff4ba3800993bebfa183492a0d3f7fc371bb8b63b859edd00f",
+    "heads_layer2.png": "e3bf50cea6d78e02edd4ae828a04c411a00fc3b5bc8f7157b358cec1e1534c1e",
+    "heads_layer1.png": "a987fe231d8afdb9468487bd3f10a6145bf004d85da4bb718d147507dbf30b7a"
+  },
+  "checkpoint_files": {
+    "best.pt": "a40cf8e23a062f8dbd7213288e8565f97679cc1e793ba0959938556c2fc6fa85",
+    "train_history.csv": "86c57f929e622282e906b9e2bf8ea555c5c8b9267bee13f74d6a91acf6e58650",
+    "config_resolved.yaml": "7207264fd12ea15d2f151772f6c1243cd9cb9e32b61208a6c68460a1cff273d8",
+    "environment.json": "7bea82e1aa4ac99df84f3efb02a02c218b3d30218cc47e4083eabb2924b07070"
+  },
+  "original_checkpoint": "/home/yg/TRANSTSR/runs/smoke_seed42_final/best.pt",
+  "relocated_checkpoint": "/home/yg/TRANSTSR/checkpoints/attention_seed42/best.pt",
+  "scientific_arrays_sha256": {
+    "x_obs": "8a36b2e8a266c929d77828035ceb3b589e903abc655cf4835ced5c420c82d544",
+    "temporal_features": "205b22e9cc238fc0a7154230c3430e549faaac03b9af62ee8f521c07f9fa5fcf",
+    "node_tokens": "4ffea78c3d596576a5fb7037e4292ecb91718e9037a35d339f80bdfce610e8d6",
+    "context_tokens": "78444b9c6a05622812cba3accbc83f59a0c83ae2f3abb0009e4885d5df7a22e8",
+    "attention_logits": "96eab58ac13450f3096cb64defbb19795221ab2d15d30ac1edd503f24e3fc0b9",
+    "attention_weights": "b5c59323caf234218c2970df96830b1267e950efd4dcd133ec079401dd9abb3f",
+    "symmetric_logits": "941134dbc056d73d5ce096c7f200e2a65d4944c46562173a5642d61f0797264f",
+    "symmetric_attention": "bb44ffc4e2e94d60c903c699e4d6cb8b795d558cd6c8860f9629cdc878332868"
+  },
+  "scientific_arrays_unchanged": true,
+  "other_export_files_unchanged": {
+    "environment.json": true,
+    "symmetric_heads.png": true,
+    "training_loss.png": true,
+    "attention_diagnostics.json": true,
+    "heads_layer2.png": true,
+    "heads_layer1.png": true
+  },
+  "metadata_changes": [
+    "checkpoint path updated; original path retained",
+    "README reproduction command updated"
+  ],
+  "removed": [
+    "src/train.py",
+    "src/probe.py",
+    "src/metrics.py",
+    "src/report.py",
+    "reports/",
+    "runs/",
+    "scripts/",
+    "tests/test_symmetry.py",
+    "tests/test_evaluation.py",
+    "configs/pilot.yaml",
+    "CODEX_TCN_GlobalAttention_Standalone.md"
+  ],
+  "verification_after_cleanup": {
+    "tests_passed": 18,
+    "reexported_samples": 8,
+    "reexported_scientific_arrays_exactly_equal": true,
+    "trajectory_metadata_unchanged": true,
+    "checkpoint_paths_exist": true,
+    "obsolete_paths_removed": true
+  }
+}
