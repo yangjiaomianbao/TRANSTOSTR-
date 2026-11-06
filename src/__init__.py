@@ -1,1 +1,1 @@
-"""Forecast-only Kuramoto attention probe."""
+"""Kuramoto TCN and spatial attention feature extraction."""

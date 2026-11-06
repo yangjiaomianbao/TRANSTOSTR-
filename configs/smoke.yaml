@@ -30,6 +30,3 @@ training:
   weight_decay: 0.0001
   grad_clip: 1.0
   num_threads: 4
-evaluation:
-  bootstrap_samples: 1000
-  example_count: 3

@@ -76,7 +76,7 @@ def get_device(name):
 
 def environment():
     packages = {}
-    for name in ["numpy", "scipy", "torch", "PyYAML", "scikit-learn", "matplotlib", "pytest"]:
+    for name in ["numpy", "scipy", "torch", "PyYAML", "matplotlib", "pytest"]:
         try:
             packages[name] = importlib.metadata.version(name)
         except importlib.metadata.PackageNotFoundError:
@@ -101,7 +101,7 @@ def source_snapshot(out):
     dest = Path(out) / "source"
     dest.mkdir()
     hashes = {}
-    for folder in ("src", "configs", "scripts", "tests"):
+    for folder in ("src", "configs", "tests"):
         for path in sorted((root / folder).rglob("*")):
             if not path.is_file() or "__pycache__" in path.parts:
                 continue

@@ -6,7 +6,7 @@ import torch
 
 from src.data.dataset import ForecastDataset, forecast_batch
 from src.model.attention_probe import AttentionProbe
-from src.train import loss_for_batch, train_model
+from src.train_attention import loss_for_batch, train_model
 
 
 def test_training_dataset_and_guard(small_data, config):
