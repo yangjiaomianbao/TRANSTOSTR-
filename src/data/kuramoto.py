@@ -55,6 +55,36 @@ def labels_for_permutation(edges, triads, perm, pair_index, tri_index):
             np.array([tuple(t) in e3 for t in tri_index], dtype=np.uint8))
 
 
+def _selected_interactions(labels, index, n, width):
+    labels, index = np.asarray(labels), np.asarray(index)
+    if labels.ndim != 1 or index.shape != (len(labels), width):
+        raise ValueError("Labels and candidate index have inconsistent shapes")
+    if not np.isin(labels, [0, 1]).all():
+        raise ValueError("Ground-truth labels must be binary")
+    if not np.issubdtype(index.dtype, np.integer) or (index < 0).any() or (index >= n).any():
+        raise ValueError("Candidate node indices must be integers within [0,n)")
+    if not np.all(np.diff(index, axis=1) > 0) or len(np.unique(index, axis=0)) != len(index):
+        raise ValueError("Candidates must contain unique, ascending node tuples")
+    return index[labels.astype(bool)]
+
+
+def pair_adjacency(y_pair, pair_index, n=30):
+    """Ground-truth undirected A2 in the labels' current node ordering."""
+    edges = _selected_interactions(y_pair, pair_index, n, 2)
+    a2 = np.zeros((n, n), dtype=np.uint8)
+    a2[edges[:, 0], edges[:, 1]] = 1
+    a2[edges[:, 1], edges[:, 0]] = 1
+    return a2
+
+
+def triad_incidence(y_tri, tri_index, n=30):
+    """Return H3 [n,M] and its column-ordered triples, including [n,0]."""
+    triads = _selected_interactions(y_tri, tri_index, n, 3)
+    h3 = np.zeros((n, len(triads)), dtype=np.uint8)
+    h3[triads.ravel(), np.repeat(np.arange(len(triads)), 3)] = 1
+    return h3, triads
+
+
 def label_matrices(y_pair, y_tri, pair_index, tri_index, n):
     a2 = np.zeros((n, n), dtype=np.uint8)
     a3 = np.zeros_like(a2)

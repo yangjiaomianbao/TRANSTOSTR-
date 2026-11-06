@@ -1,6 +1,6 @@
 # TCN + Spatial Transformer 注意力特征提取
 
-仓库仅保留共享 TCN、时间平均池化、两层四头 Spatial Transformer 的训练与特征导出流程。预测头只提供优化信号，不进行结构恢复评价或预测基线比较。
+仓库包含共享 TCN、时间平均池化、两层四头 Spatial Transformer 的训练、特征导出和真值可视化对比。自注意力用于从时序数据提取节点交互信息；当前只分析注意力包含的结构信息，不做最终结构推断结论。预测头只提供优化信号，不进行预测基线比较。
 
 ## 现有文件与结果
 
@@ -12,8 +12,31 @@
 - `data/smoke/`：可复用的本地数据。
 - `checkpoints/attention_seed42/`：当前结果所用的已有3轮训练 checkpoint、训练日志、配置和环境记录；移动时校验了文件哈希。
 - `attention_outputs/extract_8/`：第二次任务实际导出的8条轨迹及4张图，见其中 `README_attention_results.md`。
+- `scripts/compare_attention_pair_and_hypergraph.py`：仅使用已有注意力和真值，导出二元A2、三元节点-边关联H3及逐头对比图。
+- `attention_outputs/pair_and_hypergraph_compare/`：上述8条轨迹的真实结构与注意力对比结果，每条样本单独一个子目录。
 
 旧的结构评估/基线代码、旧脚本、旧报告、旧运行目录和旧任务书已删除。Git历史未修改。
+
+## 注意力与真实结构对比（不重新训练）
+
+默认处理 `attention_outputs/extract_8/metadata.json` 中全部样本，读取对应源NPZ的真实标签。新建输出目录，拒绝覆盖已有结果：
+
+```bash
+python scripts/compare_attention_pair_and_hypergraph.py
+
+# 单条轨迹；使用新的输出目录
+python scripts/compare_attention_pair_and_hypergraph.py \
+  --sample f0016_mixed_a_t000 \
+  --out attention_outputs/single_compare
+```
+
+本机可将 `python` 替换为 `/home/yg/miniconda3/envs/nd3/bin/python`。可通过 `--metadata`、`--features`、`--data` 指定实际来源。原特征文件和训练流程保持不变。
+
+每条样本保存 `A2_true.npy [30,30]`、`H3_true.npy [30,M]`、`triads_true.json` 和保留四种注意力矩阵的 `attention_matrices.npz`。A2来自 y_pair/pair_index；H3来自 y_tri/tri_index，每列恰有三个1，与JSON中的三元组顺序一致。M=0时保存真实的 `[30,0]` 并在图上注明空超边集。**不输出三元节点对投影。**
+
+`compare_layer1_head1.png` 至 `compare_layer2_head4.png` 共8张，每张左侧为真实A2，中间为symmetric_logits，右侧为symmetric_attention；`summary_pairwise.png` 为全部八头的汇总大图，`hypergraph_incidence.png` 为H3热图。图中同一样本同类型分数使用统一色标，无阈值化或最优头挑选。所有节点编号沿用导出时的置换顺序，运行前校验轨迹ID、文件哈希、节点置换及历史输入，防止错位比较。
+
+这些图只用于观察交互关联特征与真值的关系，不把注意力直接当作最终推断结构，也不新增预测模型、基线或消融。
 
 ## 复用现有 checkpoint 导出
 

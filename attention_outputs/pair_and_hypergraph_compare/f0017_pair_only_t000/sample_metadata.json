@@ -1,0 +1,52 @@
+{
+  "run_id": "pair_and_hypergraph_compare_20261106T080006271303Z",
+  "trajectory_id": "f0017_pair_only_t000",
+  "topology_id": "f0017_pair_only",
+  "source_file": "f0017_pair_only.npz",
+  "source_index": 0,
+  "export_index": 6,
+  "permutation": [
+    19,
+    26,
+    20,
+    7,
+    27,
+    24,
+    14,
+    15,
+    22,
+    8,
+    18,
+    29,
+    3,
+    10,
+    4,
+    28,
+    5,
+    13,
+    23,
+    17,
+    25,
+    21,
+    6,
+    11,
+    12,
+    9,
+    0,
+    2,
+    1,
+    16
+  ],
+  "n_pairs": 73,
+  "n_triads": 0,
+  "A2_shape": [
+    30,
+    30
+  ],
+  "H3_shape": [
+    30,
+    0
+  ],
+  "node_order": "0-based exported/permuted node IDs; canonical IDs = permutation[exported ID]",
+  "hyperedge_order": "positive y_tri entries in tri_index order; column m equals triads_true.json[m]"
+}

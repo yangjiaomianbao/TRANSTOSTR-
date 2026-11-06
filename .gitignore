@@ -6,6 +6,7 @@ __pycache__/
 /runs/
 /attention_outputs/*
 !/attention_outputs/extract_8/
+!/attention_outputs/pair_and_hypergraph_compare/
 /checkpoints/*
 !/checkpoints/attention_seed42/
 .venv/
