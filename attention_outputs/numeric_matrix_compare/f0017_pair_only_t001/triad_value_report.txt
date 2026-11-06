@@ -1,0 +1,174 @@
+真实三元超边数值报告 | f0017_pair_only_t001 | run_id=numeric_matrix_compare_20261106T084808563165Z
+节点编号沿用输入导出的0起始节点顺序；所有统计排除主对角。
+节点显著性是整行/整列普遍偏大，不是统计检验的显著性。
+R为对称矩阵，所以同一节点的行均值=列均值，不是两份独立证据。
+广泛偏高节点（预先固定的描述规则）：行均值>=全局离对角均值+各节点行均值的1个总体标准差，且该行至少75%的非对角值严格大于全局非对角中位数。常数矩阵不标记节点。
+节点加性分解（纯代数描述，不训练模型）：mu=无向非对角均值；a_i=(N-1)/(N-2)*(row_mean_i-mu)；node_component_ij=mu+a_i+a_j；residual_ij=R_ij-node_component_ij。报告其解释的离对角变异比例，不代表结构恢复能力。
+三元表“高”固定定义为R(i,j)严格大于该矩阵全部无向非对角元素的75%分位数，不使用真值选择阈值；只表示相对较高，不是边判定。
+三对都高：all_three_pairs_high；仅一对高：one_pair_high，明确高的一对及第三个节点；恰两对高：two_pairs_high，单独列出共享中心节点，不能误写成三对都高；没有高对：no_pairs_high。
+若原始A行和为1且对角为0，则对称R_A的row_mean_i=(1+sum_j A[j,i])/(2*(N-1))。因此对称注意力的高行均值也可能只是某节点被普遍关注，不能据此证明具体节点对关联。
+所有CSV保留9位有效数字；数值图仅用于阅读，2/3位小数可能掩盖微小差异。统计、分组和判断使用未舍入原值。未计算AP、未训练、未做消融，不给出最终结构推断结论。
+
+真实超边数=0；超边列顺序严格对应H3与输入triads_true.json。
+
+该样本没有真实三元超边，H3为[30,0]；不虚构三元组。
+
+=== L1H1 symmetric_logits ===
+相对高值阈值（严格大于）q75=-0.104079187
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []
+
+=== L1H1 symmetric_attention ===
+相对高值阈值（严格大于）q75=0.0355433747
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []
+
+=== L1H2 symmetric_logits ===
+相对高值阈值（严格大于）q75=0.151482023
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []
+
+=== L1H2 symmetric_attention ===
+相对高值阈值（严格大于）q75=0.0352548603
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []
+
+=== L1H3 symmetric_logits ===
+相对高值阈值（严格大于）q75=0.10903364
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []
+
+=== L1H3 symmetric_attention ===
+相对高值阈值（严格大于）q75=0.0365675762
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []
+
+=== L1H4 symmetric_logits ===
+相对高值阈值（严格大于）q75=0.227262214
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []
+
+=== L1H4 symmetric_attention ===
+相对高值阈值（严格大于）q75=0.0364077315
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []
+
+=== L2H1 symmetric_logits ===
+相对高值阈值（严格大于）q75=0.30601722
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []
+
+=== L2H1 symmetric_attention ===
+相对高值阈值（严格大于）q75=0.0376044251
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []
+
+=== L2H2 symmetric_logits ===
+相对高值阈值（严格大于）q75=0.41569519
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []
+
+=== L2H2 symmetric_attention ===
+相对高值阈值（严格大于）q75=0.0386588313
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []
+
+=== L2H3 symmetric_logits ===
+相对高值阈值（严格大于）q75=0.288987905
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []
+
+=== L2H3 symmetric_attention ===
+相对高值阈值（严格大于）q75=0.0387444608
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []
+
+=== L2H4 symmetric_logits ===
+相对高值阈值（严格大于）q75=-0.0393263232
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []
+
+=== L2H4 symmetric_attention ===
+相对高值阈值（严格大于）q75=0.0359076709
+m | (i,j,k) | R(i,j) | R(i,k) | R(j,k) | min | mean | max | category | high_pairs | third_node | shared_center
+
+本头汇总（只描述已知真实超边内部数值，不进行预测）：
+all_three_pairs_high: []
+one_pair_high: []
+two_pairs_high: []
+no_pairs_high: []

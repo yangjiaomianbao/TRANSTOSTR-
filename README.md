@@ -14,8 +14,28 @@
 - `attention_outputs/extract_8/`：第二次任务实际导出的8条轨迹及4张图，见其中 `README_attention_results.md`。
 - `scripts/compare_attention_pair_and_hypergraph.py`：仅使用已有注意力和真值，导出二元A2、三元节点-边关联H3及逐头对比图。
 - `attention_outputs/pair_and_hypergraph_compare/`：上述8条轨迹的真实结构与注意力对比结果，每条样本单独一个子目录。
+- `scripts/export_numeric_attention_reports.py`：仅基于已有样本导出CSV、逐元素数值报告、三元组两两值与黑白数字图。
+- `attention_outputs/numeric_matrix_compare/`：本次数值对比结果，包括各头数值表及节点显著性的描述性分析。
 
 旧的结构评估/基线代码、旧脚本、旧报告、旧运行目录和旧任务书已删除。Git历史未修改。
+
+## 逐元素数值对比（无训练、无AP、无消融）
+
+```bash
+python scripts/export_numeric_attention_reports.py
+
+# 可选：单个样本、指定新输出目录
+python scripts/export_numeric_attention_reports.py \
+  --sample f0016_mixed_a_t000 --out attention_outputs/numeric_single
+```
+
+默认读取 `attention_outputs/pair_and_hypergraph_compare/` 全部8条样本，写入新的 `attention_outputs/numeric_matrix_compare/`；支持 `--input-root`、`--out`、`--seed 42`、`--nonedges 20`、`--decimals 2|3`，不覆盖已有结果。
+
+每条样本输出 A2 的CSV、两层四头各两种对称分数的16个CSV、`pair_value_report.txt`、`triad_value_report.txt`、`numeric_summary.json`，以及19张白底黑字数值图（A2、16个全矩阵、左上10×10与真实边较多节点子集的放大图）。CSV保留9位有效数字，图中默认3位小数；图不做彩色着色。
+
+**节点显著性**指一个节点的整行/整列普遍偏高，而非只有少数特定真实边位置偏高。报告排除对角，列出每个节点的行均值、列均值、行均值z分数和高于矩阵中位数的比例。对称矩阵的行/列均值相同，并不是两份独立证据。广泛偏高节点采用固定描述规则：均值至少高出全局均值一个节点均值标准差，同时至少75%的该行数值高于全局中位数；这不是统计显著性检验。
+
+另用不训练参数的代数分解 `R_ij=mu+a_i+a_j+residual_ij` 描述节点整体水平解释了多少变异；剩余节点对差异也不等同于真实结构。三元表逐头列出每条已知真实超边的三个两两值及min/mean/max，以全部节点对数值的固定75%分位数为相对高值参照，分别列出“三对都高”“仅一对高且第三节点两条关联不高”“两对高”“无高对”。不根据真值调阈值，不产生边预测。
 
 ## 注意力与真实结构对比（不重新训练）
 
