@@ -1,0 +1,35 @@
+name: smoke
+data:
+  seed: 42
+  n_nodes: 30
+  families: {train: 12, val: 4, test: 4}
+  trajectories: 2
+  expected_pairs: 60
+  expected_triads: 20
+  k2: 0.8
+  k3: 0.4
+  dt: 0.05
+  observed: 96
+  future: 32
+  rtol: 1.0e-8
+  atol: 1.0e-10
+model:
+  d_model: 64
+  n_heads: 4
+  n_layers: 2
+  d_ff: 128
+  dropout: 0.1
+  kernel_size: 3
+  dilations: [1, 2, 4, 8]
+training:
+  seed: 42
+  batch_size: 32
+  epochs: 3
+  patience: 15
+  lr: 0.001
+  weight_decay: 0.0001
+  grad_clip: 1.0
+  num_threads: 4
+evaluation:
+  bootstrap_samples: 1000
+  example_count: 3
